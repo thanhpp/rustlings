@@ -1,8 +1,7 @@
 // iterators4.rs
 // Execute `rustlings hint iterators4` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
-
+// factorial(num) = num!
 pub fn factorial(num: u64) -> u64 {
     // Complete this function to return the factorial of num
     // Do not use:
@@ -13,6 +12,13 @@ pub fn factorial(num: u64) -> u64 {
     // For an extra challenge, don't use:
     // - recursion
     // Execute `rustlings hint iterators4` for hints.
+
+    // (1..=num) creates an iterator
+    // fold: folds (groups) all element of a iterator by applying an operation
+    // fold(1, |acc, x| acc * x)
+    // -> init the acc = 1
+    // |acc, x| acc * x: a closure that takes the accumulator and x (an element) then perform an operation; acc = acc * x
+    (1..=num).fold(1, |acc, x| acc * x)
 }
 
 #[cfg(test)]
